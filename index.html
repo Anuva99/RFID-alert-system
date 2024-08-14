@@ -1,62 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me@Walmart App</title>
+    <title>Me@walmart</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
-    <div class="navbar">
+    <nav class="navbar">
         <div class="menu-icon">
-            <div class="hamburger"></div>
-            <div class="hamburger"></div>
-            <div class="hamburger"></div>
+            <a href="#" class="hamburger-wrapper" aria-label="Main Navigation" id="hamburgerBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
         </div>
-        <div class="title">
-            OneWalmart
+        <div class="brand-logo">
+            <span>OneWalmart</span>
+            <img src=https://one.walmart.com/content/usone/en_us/tools/header/_jcr_content/header.img.png
+                alt="Walmart Logo">
         </div>
-        
-        <button class="logout-btn">Logout</button>
+        <div class="logout">
+            <span>Logout</span>
+        </div>
+    </nav>
+
+
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebarBtn">×</button>
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="history.html">Previous Alerts</a></li>
+            <li><a href="#">Me</a></li>
+        </ul>
     </div>
 
-    <!-- Main Content -->
-    <div class="content">
-        <h1 class="main-heading">Me@Walmart App</h1>
-        <p class="sub-heading">For current and future Walmart U.S. Field Associates</p>
-
-        <div class="app-details">
-            <div class="details-section">
-                <h2>Walmart Associates</h2>
-                <p>Me@Walmart app brings together personal and work needs of Walmart associates into one app. Features of this app include being able to manage work schedule, request time-off, swap shifts, take COVID-19 health assessment, and more.</p>
-            </div>
-
-            <div class="details-section">
-                <h2>Non-Walmart Associates</h2>
-                <p>Me@Walmart serves as a gateway for anyone interested in starting their career with Walmart. The app also includes information about Walmart's benefits, history, culture, and values.</p>
-            </div>
-
-            <div class="details-section">
-                <h2>Tech Support</h2>
-                <p>If you're experiencing technical issues with Me@Walmart app, contact <strong>1-700-WALMART</strong>.</p>
-            </div>
-        </div>
-
-        <div class="app-links">
-            <img src="appstore.png" alt="Download on the App Store">
-            <img src="googleplay.png" alt="Get it on Google Play">
-        </div>
+    <div class="scroll2">
+        <h1> Theft Alert App</h1>
     </div>
 
-    <!-- Image -->
-    <div class="image">
-        <img src="phone-image.png" alt="Me@Walmart App Screenshot">
+
+    <div class = 'current-notification-wrapper'>
+        <div class="current-notification">
+        <h2>Alert!!!</h2>
+        <p id="current-notification-content">No new alerts at the moment.</p>
+           </div> 
+    </div>
+
+    
+    <div class="container">
+        <h2>Previous Alerts</h2>
+        <div id="previous-notifications"></div>
     </div>
 
     <!-- Footer Section -->
     <footer class="footer">
+        <div class="breadcrumb">
+
+            <div class="item link" style="max-width: 59.33%;">
+                <a href=https://one.walmart.com/content/usone/en_us/company.html>
+                    <img src=https://one.walmart.com/content/usone/en_us/tools/header/_jcr_content/header.img.png
+                        style="width:17.8px; height:20px;">
+                </a>
+            </div>
+
+            <div class="breadcrumb-caret"> </div>
+
+
+
+            <div class="item link" style="max-width: 29.33%;">
+                <a href="/content/usone/en_us/company.html" style="color: white;padding-left: 15px;">
+                    >&nbsp;&nbsp;Company&nbsp;&nbsp;> </a>
+            </div>
+            <div class="breadcrumb-caret">
+            </div>
+        </div>
+
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Division Homepages</h3>
@@ -111,7 +136,8 @@
             </div>
             <div class="footer-column newsletter">
                 <h3>Walmart World Newsletter</h3>
-                <p>Get the latest exclusive associate discounts, Walmart stories, and more delivered right to your inbox monthly.</p>
+                <p>Get the latest exclusive associate discounts, Walmart stories, and more delivered right to your
+                    inbox monthly.</p>
                 <button class="subscribe-btn">Subscribe</button>
             </div>
         </div>
@@ -129,7 +155,7 @@
 
     <!-- JavaScript to handle fixed navbar on scroll -->
     <script>
-        window.onscroll = function() {myFunction()};
+        window.onscroll = function () {myFunction()};
 
         var navbar = document.querySelector('.navbar');
         var sticky = navbar.offsetTop;
@@ -145,4 +171,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
