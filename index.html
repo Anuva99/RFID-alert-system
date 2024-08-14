@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me@Walmart App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="menu-icon">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+        </div>
+        <div class="title">
+            OneWalmart
+        </div>
+        
+        <button class="logout-btn">Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1 class="main-heading">Me@Walmart App</h1>
+        <p class="sub-heading">For current and future Walmart U.S. Field Associates</p>
+
+        <div class="app-details">
+            <div class="details-section">
+                <h2>Walmart Associates</h2>
+                <p>Me@Walmart app brings together personal and work needs of Walmart associates into one app. Features of this app include being able to manage work schedule, request time-off, swap shifts, take COVID-19 health assessment, and more.</p>
+            </div>
+
+            <div class="details-section">
+                <h2>Non-Walmart Associates</h2>
+                <p>Me@Walmart serves as a gateway for anyone interested in starting their career with Walmart. The app also includes information about Walmart's benefits, history, culture, and values.</p>
+            </div>
+
+            <div class="details-section">
+                <h2>Tech Support</h2>
+                <p>If you're experiencing technical issues with Me@Walmart app, contact <strong>1-700-WALMART</strong>.</p>
+            </div>
+        </div>
+
+        <div class="app-links">
+            <img src="appstore.png" alt="Download on the App Store">
+            <img src="googleplay.png" alt="Get it on Google Play">
+        </div>
+    </div>
+
+    <!-- Image -->
+    <div class="image">
+        <img src="phone-image.png" alt="Me@Walmart App Screenshot">
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Division Homepages</h3>
+                <ul>
+                    <li><a href="#">Field (Div. 1)</a></li>
+                    <li><a href="#">Health & Wellness</a></li>
+                    <li><a href="#">Home Office</a></li>
+                    <li><a href="#">Sam's Club</a></li>
+                    <li><a href="#">Supply Chain</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Emergency Support</a></li>
+                    <li><a href="#">Ethics - Report a Concern</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Brands</h3>
+                <ul>
+                    <li><a href="#">Walmart</a></li>
+                    <li><a href="#">Sam's Club</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Corporate Sites</h3>
+                <ul>
+                    <li><a href="#">Walmart Corporate</a></li>
+                    <li><a href="#">Walmart.org</a></li>
+                    <li><a href="#">Walmart Museum</a></li>
+                    <li><a href="#">Spark Shop</a></li>
+                    <li><a href="#">Walmart World</a></li>
+                    <li><a href="#">Walmart Ethics</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Social Accounts</h3>
+                <ul>
+                    <li><a href="#">Doug McMillon on Facebook</a></li>
+                    <li><a href="#">Doug McMillon on Instagram</a></li>
+                    <li><a href="#">Doug McMillon on LinkedIn</a></li>
+                    <li><a href="#">Walmart World on Facebook</a></li>
+                    <li><a href="#">Walmart World on Instagram</a></li>
+                    <li><a href="#">Walmart World on X</a></li>
+                    <li><a href="#">Walmart Inc. on X</a></li>
+                    <li><a href="#">Walmart on Facebook</a></li>
+                    <li><a href="#">Walmart on Instagram</a></li>
+                    <li><a href="#">Walmart on X</a></li>
+                    <li><a href="#">Walmart on YouTube</a></li>
+                </ul>
+            </div>
+            <div class="footer-column newsletter">
+                <h3>Walmart World Newsletter</h3>
+                <p>Get the latest exclusive associate discounts, Walmart stories, and more delivered right to your inbox monthly.</p>
+                <button class="subscribe-btn">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Walmart, Inc.</p>
+            <ul class="footer-bottom-links">
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of use</a></li>
+                <li><a href="#">EPA Agreement</a></li>
+                <li><a href="#">Your Privacy Choices</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript to handle fixed navbar on scroll -->
+    <script>
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.querySelector('.navbar');
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+</html>
