@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walmart Theft Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #041f41;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #406bd7;
+            margin-right: 10px;
+            margin: 0;
+            font-size: 60px;
+            /* Increase font size */
+            font-weight: bold;
+            /* Make text bold */
+        }
+
+        h2 {
+            font-size: 35px;
+        }
+
+        .header img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .notification {
+            background: #b2babf;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .details {
+            flex-grow: 1;
+        }
+
+        .location {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Walmart</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpX8tLU8tQ1DTt0sxDSYb7gyBoFMaAe--XKw&s"
+                alt="Store Security">
+        </div>
+        <h2>Previous Alerts</h2>
+        <div id="notifications"></div>
+    </div>
+
+    <script>
+        // Sample data of previous theft notifications
+        const theftNotifications = [
+            {
+                name: "Galaxy Watch7 40mm, Cream, Bluetooth",
+                category: "Electronics",
+                location: "A20"
+            },
+            {
+                name: "RTIC 32 OZ Stainless Steel Insulated Bottle, Wide Mouth Multi-Use Lid, Black",
+                category: "Household",
+                location: "D15"
+            },
+            {
+                name: "Samsung Galaxy Book4 360 15.6 inch Touchscreen",
+                category: "Electronics",
+                location: "A26"
+            },
+            {
+                name: "Bose QuietComfort Ultra Headphones, Noise Cancelling Over Ear, Wireless Bluetooth Headphones, Black",
+                category: "Electronics",
+                location: "A17"
+            },
+            {
+                name: "Clorox 2 for Colors Stain Remover and Laundry Additive Bleach Free Original",
+                category: "Household",
+                location: "D09"
+            },
+            {
+                name: "Milani All Inclusive Eye Cheek & Face Palette Medium to Deep",
+                category: "Beauty",
+                location: "B19"
+            },
+            {
+                name: "No Boundaries Women Short Western Boot",
+                category: "Clothing",
+                location: "C12"
+            },
+            {
+                name: "Happy Village Organic Fig & Nut Bars, STRAWBERRY, Organic Healthy Snack Bars (16 bars, 1.4 OZ each)",
+                category: "Grocery&Essentials",
+                location: "E19"
+            },
+            {
+                name: "Calvin Klein Beauty Eternity Eau De Parfum Spray for Women 1.7 oz",
+                category: "Beauty",
+                location: "B05"
+            },
+            {
+                name: "Harlow & Rose Womens Short Sleeve Faux Wrap Dress, Olive, Xlarge",
+                category: "Clothing",
+                location: "C26"
+            },
+            {
+                name: "Great Value Frozen Broccoli Florets, 12 oz Steamable Bag",
+                category: "Grocery&Essentials",
+                location: "E06"
+            },
+            {
+                name: "Foster Grant Men Active Way Shaped Sport Sunglasses, Black",
+                category: "Clothing",
+                location: "C11"
+            },
+        ];
+
+        // Function to display notifications
+        function displayNotifications() {
+            const notificationsDiv = document.getElementById('notifications');
+            theftNotifications.forEach(notification => {
+                const notificationDiv = document.createElement('div');
+                notificationDiv.className = 'notification';
+
+                const detailsDiv = document.createElement('div');
+                detailsDiv.className = 'details';
+                detailsDiv.innerHTML = `<strong>${notification.name}</strong><br><span class="location">${notification.category} - ${notification.location}</span>`;
+
+                notificationDiv.appendChild(detailsDiv);
+                notificationsDiv.appendChild(notificationDiv);
+            });
+        }
+
+        // Display notifications on page load
+        displayNotifications();
+    </script>
+</body>
+
+</html>
