@@ -1,178 +1,524 @@
-<!DOCTYPE html>
-<html lang="en">
+body {
+    font-family: bogle;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Me@walmart</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="menu-icon">
-            <a href="#" class="hamburger-wrapper" aria-label="Main Navigation" id="hamburgerBtn">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </a>
-        </div>
-        <div class="brand-logo">
-            <span>OneWalmart</span>
-            <img src=https://one.walmart.com/content/usone/en_us/tools/header/_jcr_content/header.img.png
-                alt="Walmart Logo">
-        </div>
-        <div class="logout">
-            <span>Logout</span>
-        </div>
-    </nav>
-
-
-    <div id="sidebar" class="sidebar">
-        <button id="closeSidebarBtn">×</button>
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="history.html">Previous Alerts</a></li>
-            <li><a href="#">Me</a></li>
-        </ul>
-    </div>
-
-    <div class="scroll2">
-        <h1> Theft Alert App</h1>
-        <h5> Secure Your World with Every Alert!</h5>
-    </div>
-
-
-    <div class='current-notification-wrapper'>
-      <div class="current-notification">
-        <div class="notification-content">
-          <h2>Alert!!!</h2>
-          <p id="current-notification-content" style="font-size: 18px;">No new alerts at the moment.</p>
-        </div>
-      </div>
-    </div>
-
-    
-    <div class="container">
-        <h2>Today's Alerts</h2>
-        <div id="previous-notifications"></div>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="breadcrumb">
-
-            <div class="item link" style="max-width: 59.33%;">
-                <a href=https://one.walmart.com/content/usone/en_us/company.html>
-                    <img src=https://one.walmart.com/content/usone/en_us/tools/header/_jcr_content/header.img.png
-                        style="width:17.8px; height:20px;">
-                </a>
-            </div>
-
-            <div class="breadcrumb-caret"> </div>
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
 
 
 
-            <div class="item link" style="max-width: 29.33%;">
-                <a href="/content/usone/en_us/company.html" style="color: white;padding-left: 15px;">
-                    >&nbsp;&nbsp;Company&nbsp;&nbsp;> </a>
-            </div>
-            <div class="breadcrumb-caret">
-            </div>
-        </div>
+.navbar {
+    background-color: #0071ce;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Division Homepages</h3>
-                <ul>
-                    <li><a href="#">Field (Div. 1)</a></li>
-                    <li><a href="#">Health & Wellness</a></li>
-                    <li><a href="#">Home Office</a></li>
-                    <li><a href="#">Sam's Club</a></li>
-                    <li><a href="#">Supply Chain</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="#">Emergency Support</a></li>
-                    <li><a href="#">Ethics - Report a Concern</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Brands</h3>
-                <ul>
-                    <li><a href="#">Walmart</a></li>
-                    <li><a href="#">Sam's Club</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Corporate Sites</h3>
-                <ul>
-                    <li><a href="#">Walmart Corporate</a></li>
-                    <li><a href="#">Walmart.org</a></li>
-                    <li><a href="#">Walmart Museum</a></li>
-                    <li><a href="#">Spark Shop</a></li>
-                    <li><a href="#">Walmart World</a></li>
-                    <li><a href="#">Walmart Ethics</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Social Accounts</h3>
-                <ul>
-                    <li><a href="#">Doug McMillon on Facebook</a></li>
-                    <li><a href="#">Doug McMillon on Instagram</a></li>
-                    <li><a href="#">Doug McMillon on LinkedIn</a></li>
-                    <li><a href="#">Walmart World on Facebook</a></li>
-                    <li><a href="#">Walmart World on Instagram</a></li>
-                    <li><a href="#">Walmart World on X</a></li>
-                    <li><a href="#">Walmart Inc. on X</a></li>
-                    <li><a href="#">Walmart on Facebook</a></li>
-                    <li><a href="#">Walmart on Instagram</a></li>
-                    <li><a href="#">Walmart on X</a></li>
-                    <li><a href="#">Walmart on YouTube</a></li>
-                </ul>
-            </div>
-            <div class="footer-column newsletter">
-                <h3>Walmart World Newsletter</h3>
-                <p>Get the latest exclusive associate discounts, Walmart stories, and more delivered right to your
-                    inbox monthly.</p>
-                <button class="subscribe-btn">Subscribe</button>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 Walmart, Inc.</p>
-            <ul class="footer-bottom-links">
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of use</a></li>
-                <li><a href="#">EPA Agreement</a></li>
-                <li><a href="#">Your Privacy Choices</a></li>
-            </ul>
-        </div>
-    </footer>
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+}
 
-    <!-- JavaScript to handle fixed navbar on scroll -->
-    <script>
-        window.onscroll = function () {myFunction()};
+.sidebar h2 {
+    margin-top: 0;
+    color: black;
+    font: bogle;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    margin: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #dfcb49;
+    padding-bottom: 10px;
+}
 
-        var navbar = document.querySelector('.navbar');
-        var sticky = navbar.offsetTop;
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        function myFunction() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        }
-    </script>
-    <script src="script.js"></script>
+.sidebar ul li {
+    margin: 10px 0;
+}
 
-</body>
+.sidebar ul li a {
+    color: black;
+    font: bogle;
+    text-decoration: none;
+}
 
-</html>
+#closeSidebarBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: black;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.hamburger-wrapper {
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background-color: white;
+}
+
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+.brand-logo {
+    display: flex;
+    margin-left: 90px;
+    margin-right: 190px;
+}
+
+.brand-logo span {
+    font-size: 20px;
+    margin-right: 5px;
+    margin-left: 110px;
+}
+
+.brand-logo img {
+    width: 32px;
+    object-fit: contain;
+    height: 26px;
+    border: 0px;
+    vertical-align: middle;
+    border-style: none;
+    text-align: center;
+    align-content: space-between;
+}
+
+.logout {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    left: -50px;
+}
+.scroll2 {
+    height: 175px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #0071ce;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 125px; /* Add left padding */
+    padding-right: 15px;
+    padding-bottom: 45px;
+    position: relative;
+    top: 30px;
+    z-index: 900;
+    transition: transform 0.3s;
+}
+
+.scroll2 h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+.scroll2 h5 {
+    color: white;
+    margin: 10px 0 0 0; 
+    font-size: 18px;
+    font-weight: normal;
+    display: block; 
+}
+
+
+.current-notification-wrapper {
+    position: relative;
+    top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-notification {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px; /* Increase padding for more space inside the box */
+    width: 50%; /* Increase the width as needed */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 950;
+    border-radius: 15px; 
+}
+
+.current-notification h2 {
+    font-size: 2em; 
+    color: black; 
+    margin: 0; 
+    text-align: center; 
+}
+
+.current-notification p {
+    font-size: 18px; 
+    color: #555; 
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+.notification-content {
+    background-color: #f1f1f1;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.notification-content strong {
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: black !important; 
+}
+
+
+
+.notification-content .category {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.notification-content .description {
+    font-weight: normal;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.notification-content .location {
+    font-weight: normal;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+#previous-notifications {
+    margin-top:20x;
+}
+
+.previous-notification {
+    background-color: #e8e8e8;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px; 
+    color: #555; 
+}
+
+.container h2 {
+    font-size: 24px; 
+    margin-bottom: 15px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -15px;
+}
+
+/* Additional styling if needed */
+h1 {
+    margin: 0;
+}
+
+.main-heading {
+    font-size: 2.5em;
+    color: #0071ce;
+    margin-bottom: 0;
+}
+
+.sub-heading {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.footer {
+    background-color: #001e4f;
+    color: white;
+    padding: 50px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .scroll2 {
+        padding-left: 18px;
+        justify-content: center;
+    }
+
+    .current-notification-wrapper {
+        top: -25px;
+    }
+
+    .current-notification {
+        width: 80%;
+    }
+
+    .container {
+        padding: 10px;
+        top: -30px;
+    }
+}
+
+.main-heading {
+    font-size: 2.5em;
+    color: #0071ce;
+    margin-bottom: 0;
+}
+
+.sub-heading {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.notification-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.extended-footer-component.darken-header-footer .breadcrumb {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.breadcrumbComponent .breadcrumb {
+    display: flex;
+}
+
+.breadcrumb {
+    width: 80vw;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow-y: hidden;
+}
+
+.image {
+    position: absolute;
+    right: 20px;
+    top: 150px;
+}
+
+.image img {
+    width: 250px;
+}
+
+.item link {
+    color: rgb(255, 255, 255);
+    text-decoration-line: underline;
+    font-size: 14px;
+}
+
+.footer {
+    background-color: #001e4f;
+    color: white;
+    padding: 50px 20px;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+    width: 50%;
+    /* or any width you prefer */
+    margin: 0 auto;
+}
+
+.newsletter {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    /* Optional: Set a max-width to limit the width of the content */
+}
+
+.newsletter p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.subscribe-btn {
+    text-align: center;
+    background-color: #ffb500;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* Centers the button */
+    display: inline-block;
+}
+
+.subscribe-btn:hover {
+    background-color: #fbc02d;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-bottom-links li {
+    display: inline;
+}
+
+.footer-bottom-links li a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.footer-bottom-links li a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .image {
+        position: static;
+        margin: 20px auto;
+    }
+
+    .content {
+        padding: 80px 10px 20px 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        flex: 1 1 auto;
+        margin: 10px 0;
+    }
+}
