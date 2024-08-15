@@ -136,21 +136,21 @@ body {
     position: relative;
     left: -50px;
 }
-
 .scroll2 {
-    height: 200px;
+    height: 175px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #0071ce;
     display: flex;
-    justify-content: left;
-    padding-left: 175px;
-    padding-bottom: 10px;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-left: 125px; /* Add left padding */
+    padding-right: 15px;
+    padding-bottom: 45px;
     position: relative;
-    top: 40px;
+    top: 30px;
     z-index: 900;
     transition: transform 0.3s;
-
 }
 
 .scroll2 h1 {
@@ -159,9 +159,18 @@ body {
     margin: 0;
 }
 
+.scroll2 h5 {
+    color: white;
+    margin: 5px 0 0 0; 
+    font-size: 18px;
+    font-weight: normal;
+    display: block; /* Takes up full width */
+}
+
+
 .current-notification-wrapper {
     position: relative;
-    top: -20px;
+    top: -40px;
     display: flex;
     justify-content: center;
 }
@@ -171,7 +180,7 @@ body {
     border: 1px solid #ccc;
     padding: 20px; /* Increase padding for more space inside the box */
     width: 50%; /* Increase the width as needed */
-    height: 50% /* Increase the height as needed */
+    height: 50% 
     display: flex;
     justify-content:center;
     align-items: center;
@@ -221,7 +230,7 @@ body {
 
 .previous-notification {
     background-color: #e8e8e8;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
     border-radius: 4px;
     font-size: 14px; 
@@ -237,7 +246,7 @@ body {
     max-width: 500px;
     margin: 40px auto;
     background: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
